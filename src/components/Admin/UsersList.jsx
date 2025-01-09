@@ -36,7 +36,7 @@ export function UsersList() {
   const fetchUsers = () => {
     axios
       .get(
-        `https://https://bulk-email-sender-7psg.onrender.com/api/v2/admin/all-users?page=${currentPage}`,
+        `https://bulk-email-sender-7psg.onrender.com/api/v2/admin/all-users?page=${currentPage}`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -57,7 +57,7 @@ export function UsersList() {
     const nextPage = currentPage + 1;
     axios
       .get(
-        `https://https://bulk-email-sender-7psg.onrender.com/api/v2/admin/all-users?page=${nextPage}`,
+        `https://bulk-email-sender-7psg.onrender.com/api/v2/admin/all-users?page=${nextPage}`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,

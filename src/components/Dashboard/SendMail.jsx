@@ -34,7 +34,7 @@ export const SendMail = () => {
 
     const sentData = axios
       .post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/sendMail",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/sendMail",
         data,
         {
           headers: {

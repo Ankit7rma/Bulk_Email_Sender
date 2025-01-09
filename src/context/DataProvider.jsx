@@ -48,8 +48,8 @@ const DataProvider = ({ children }) => {
       ? toast.loading("Logging In")
       : toast.loading("Registration in Progress");
     const apiLink = isLogin
-      ? "https://https://bulk-email-sender-7psg.onrender.com/api/v2/login"
-      : "https://https://bulk-email-sender-7psg.onrender.com/api/v2/signup";
+      ? "https://bulk-email-sender-7psg.onrender.com/api/v2/login"
+      : "https://bulk-email-sender-7psg.onrender.com/api/v2/signup";
     const authData = isLogin ? loginData : signupData;
     try {
       const data = await axios.post(apiLink, authData, {
@@ -103,7 +103,7 @@ const DataProvider = ({ children }) => {
 
     try {
       const data = await axios.post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/setup-smt",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/setup-smt",
         smtpData,
         {
           headers: {
@@ -124,7 +124,7 @@ const DataProvider = ({ children }) => {
     try {
       toast.loading("Creating Email List");
       await axios.post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/createEmailList",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/createEmailList",
         data,
         {
           headers: {
@@ -148,7 +148,7 @@ const DataProvider = ({ children }) => {
     try {
       toast.loading("Loading E-mail Lists");
       const response = await axios.post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/getEmailList",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/getEmailList",
         data,
         {
           headers: {

@@ -22,7 +22,7 @@ export const Stats = () => {
     };
     const data = await axios
       .post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/admin/total-users",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/admin/total-users",
         auth,
         {
           headers: {
@@ -41,7 +41,7 @@ export const Stats = () => {
     };
     await axios
       .post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/admin/total-emails-sent",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/admin/total-emails-sent",
         auth,
         {
           headers: {
@@ -59,7 +59,7 @@ export const Stats = () => {
     };
     await axios
       .post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/admin/total-emails-lists",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/admin/total-emails-lists",
         auth,
         {
           headers: {

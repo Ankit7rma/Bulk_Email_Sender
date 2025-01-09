@@ -34,7 +34,7 @@ export function ContactPage() {
     };
     await axios
       .post(
-        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/contact-us",
+        "https://bulk-email-sender-7psg.onrender.com/api/v2/contact-us",
         contactDeatils,
         {
           headers: {

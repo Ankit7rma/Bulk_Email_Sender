@@ -43,7 +43,7 @@ export const TopUsers = () => {
     setLoading(true);
     axios
       .get(
-        `https://https://bulk-email-sender-7psg.onrender.com/api/v2/admin/get-top-users?page=${currentPage}`,
+        `https://bulk-email-sender-7psg.onrender.com/api/v2/admin/get-top-users?page=${currentPage}`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -70,7 +70,7 @@ export const TopUsers = () => {
     const nextPage = currentPage + 1;
     axios
       .get(
-        `https://https://bulk-email-sender-7psg.onrender.com/api/v2/admin/get-top-users?page=${nextPage}`,
+        `https://bulk-email-sender-7psg.onrender.com/api/v2/admin/get-top-users?page=${nextPage}`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
