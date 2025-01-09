@@ -7,10 +7,9 @@ import logo from "../assets/Logos/SendyyLogos.png";
 
 export function SignUpThree({ isLogin = false }) {
   const navigate = useNavigate();
-
   const { onChangeHandler } = useContext(DataContext);
   const { signupData, authClick, loading } = useContext(DataContext);
-  console.log(isLogin);
+
   const onClickHandler = () => {
     if (
       !isLogin &&
@@ -18,17 +17,18 @@ export function SignUpThree({ isLogin = false }) {
         signupData.email.length <= 6 ||
         signupData.name.length <= 6)
     ) {
-      console.log("Toast shown");
-
-      console.log("All the fields length should be greator then 6");
-      toast.error("All fields length should be greator then 6");
+      toast.error("All fields length should be greater than 6");
     } else {
-      isLogin ? authClick((isLogin = true)) : authClick();
+      if (isLogin) {
+        authClick((isLogin = true));
+        navigate("/dashboard/stats"); // Navigate to dashboard/stats after login
+      } else {
+        authClick();
+      }
     }
   };
 
   const onChanging = (e) => {
-    console.log("loginData: ", isLogin);
     isLogin
       ? onChangeHandler(e, (isLogin = true))
       : onChangeHandler(e, (isLogin = false));
@@ -39,7 +39,6 @@ export function SignUpThree({ isLogin = false }) {
       <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24 bg-[#101728] overflow-y-scroll">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
           <div className=" h-[50px]"></div>
-
           <div className="mb-2 flex justify-center">
             <img src={logo} alt="logo" height={50} width={50} />
           </div>
