@@ -13,7 +13,7 @@ app.use(cookieParser());
 app.use("/api/v2", router);
 
 dbConnect();
-
-app.listen(process.env.PORT, () => {
-  console.log("Server Started Successfully");
+const port = process.env.PORT || 3003;
+app.listen(port, () => {
+  console.log(`Server Started Successfully on server ${process.env.PORT}`);
 });

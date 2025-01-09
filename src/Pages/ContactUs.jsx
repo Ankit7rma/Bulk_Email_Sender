@@ -1,64 +1,65 @@
-'use client'
+"use client";
 
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from "react";
 
-import { FooterFour } from '../components/common/Footer'
-import axios from 'axios'
-import { DataContext } from '../context/DataProvider'
-import { toast } from 'react-hot-toast'
-import { Footer } from '../components/common/Footer2'
-
+import { FooterFour } from "../components/common/Footer";
+import axios from "axios";
+import { DataContext } from "../context/DataProvider";
+import { toast } from "react-hot-toast";
+import { Footer } from "../components/common/Footer2";
 
 export function ContactPage() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
-  const { authToken } = useContext(DataContext)
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { authToken } = useContext(DataContext);
   const [contactDeatils, setContactDeatils] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
-    e.preventDefault()
-    
+    e.preventDefault();
+
     setContactDeatils({
       ...contactDeatils,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  const handleSubmit = async(e) => {
-    e.preventDefault()
-    console.log(contactDeatils)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(contactDeatils);
     const auth = {
-        token: authToken
-      }
-    await axios.post('https://bulk-email-sender-backend.onrender.com/api/v2/contact-us', contactDeatils,{
-        headers: {
-            'Content-Type': 'application/json',
-
+      token: authToken,
+    };
+    await axios
+      .post(
+        "https://https://bulk-email-sender-7psg.onrender.com/api/v2/contact-us",
+        contactDeatils,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-    }).then((data)=>{ console.log(data) 
-    toast.success('Message sent successfully')
-    }).catch((err)=>{console.log(err)
-     toast.error('Message not sent')
-    })
-
-  }
+      )
+      .then((data) => {
+        console.log(data);
+        toast.success("Message sent successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Message not sent");
+      });
+  };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div>
-      
-        
-            
       <div className="mx-auto max-w-7xl px-4">
-        <div className='h-[70px]'>
-
-        </div>
+        <div className="h-[70px]"></div>
         {/* Hero Map */}
         <div className="flex flex-col space-y-8 pb-10 pt-12 md:pt-24">
           <div className="mx-auto max-w-max rounded-full border bg-gray-50 p-1 px-3">
@@ -70,7 +71,8 @@ export function ContactPage() {
             Love to hear from you
           </p>
           <p className="mx-auto max-w-4xl text-center text-base text-gray-400 md:text-xl">
-          Whether you have questions, ideas, or just want to say hello, we're all ears. Drop us a message, and let's start the conversation!
+            Whether you have questions, ideas, or just want to say hello, we're
+            all ears. Drop us a message, and let's start the conversation!
           </p>
         </div>
         <div className="mx-auto max-w-7xl py-12 md:py-24">
@@ -78,7 +80,9 @@ export function ContactPage() {
             {/* contact from */}
             <div className="flex items-center justify-center">
               <div className="px-2 md:px-12">
-                <p className="text-2xl font-bold text-gray-300 md:text-4xl">Get in touch</p>
+                <p className="text-2xl font-bold text-gray-300 md:text-4xl">
+                  Get in touch
+                </p>
                 <p className="mt-4 text-lg text-gray-400">
                   Our friendly team would love to hear from you.
                 </p>
@@ -95,7 +99,7 @@ export function ContactPage() {
                         className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                         type="text"
                         id="first_name"
-                        name='name'
+                        name="name"
                         placeholder="First Name"
                         onChange={handleChange}
                       />
@@ -126,7 +130,7 @@ export function ContactPage() {
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                       type="text"
                       id="email"
-                      name='email'
+                      name="email"
                       placeholder="Email"
                       onChange={handleChange}
                     />
@@ -155,7 +159,7 @@ export function ContactPage() {
                     <textarea
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                       id="message"
-                      name='message'
+                      name="message"
                       placeholder="Leave us a message"
                       onChange={handleChange}
                       cols={3}
@@ -179,10 +183,10 @@ export function ContactPage() {
           </div>
         </div>
       </div>
-      
+
       {/* footer */}
-      
-      <Footer/>
+
+      <Footer />
     </div>
-  )
+  );
 }
